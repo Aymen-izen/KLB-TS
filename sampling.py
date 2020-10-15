@@ -112,26 +112,3 @@ def D_tracking(omega,N_visits, t):
     a = idx[1].item()
     return s,a,starved
 
-def fast_D_tracking(omega,N_visits, t, period):
-    Ns = N_visits.size()[0]
-    Na = N_visits.size()[1]
-    Nsa = Ns * Na
-    starved = False 
-    for s,a in itertools.product(range(Ns),range(Na)):
-        if N_visits[s,a] < (t+period)**(1/2) - Nsa/2 : # if some pair is starving, sample from it
-            starved = True
-            return s,a, starved
-    
-    # Otherwise sample from the pair whose number of visits is far behind its cumulated weights
-#     N_samples = cp.Variable((Ns,Na), nonneg=True)
-#     np_Nvisits = N_visits.numpy()
-#     np_omega = omega.numpy()
-#     objective = cp.max((t+period)*np_omega - np_Nvisits-N_samples)#,'inf')
-#     constraints = [cp.sum(N_samples)==period]
-#     prob = cp.Problem(cp.Minimize(objective), constraints)
-#     prob.solve(solver=cp.SCS)
-    N_samples = (t+period)*omega - N_visits
-#     print("difference", N_samples.int().double()+N_visits- (t+period)*omega)
-#     print("int difference", N_samples.value.astype(int) - np_Nvisits- (t+period)*np_omega)
-    return None,N_samples,starved
-
