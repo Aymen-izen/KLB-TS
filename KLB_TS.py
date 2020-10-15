@@ -56,37 +56,5 @@ def KLBTS(phi,delta= 1e-3,period = 1e3, speedup=True) :
 #         print("Updated in ", time.time()-t1)
         N_visits[s,a] += 1
         t+=1        
-        
-#         x,y, starved = fast_D_tracking(omega_hat,N_visits,t, period)
-#         if starved: # some pair was underexplored
-#             print("starved")
-#             s = x
-#             a = y
-#             rewards, transitions = phi.multiple_samples(s,a,1)
-#             phi_hat = update(phi_hat,s,a,rewards,transitions,1,N_visits[s,a])
-#             N_visits[s,a] += 1
-#             t+=1
-#         else :
-#             #print("gonna perform fast D_tracking")
-#             #N_samples = torch.from_numpy(y)
-#             N_samples = y
-#             print("N_samples",N_samples)
-#             for s,a in itertools.product(range(Ns),range(Na)): 
-#                 N = int(N_samples[s,a])
-#                 if N > 0:
-#                     rewards, transitions = phi.multiple_samples(s,a,N)
-#                     phi_hat = update(phi_hat,s,a,rewards,transitions,N,N_visits[s,a])
-#                     N_visits[s,a] += N
-#                     t+= N
-#             print("tt",t)
-#             # int(N_samples) might not sum exactly to 1 period, so we dot D_tracking for the rest
-#             while not (t  % period==0):
-#                 s,a,starved = D_tracking(omega_hat,N_visits,t)
-#                 rewards, transitions = phi.multiple_samples(s,a,1)
-#                 phi_hat = update(phi_hat,s,a,rewards,transitions,1,N_visits[s,a])
-#                 N_visits[s,a] += 1
-#                 t+=1
-#             print("ttt",t)
-                
  
     return pi_hat,t,EARLIEST
