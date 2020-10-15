@@ -14,7 +14,7 @@ The results will be stored at "path_to_results_file.pkl".
 Example:  \textbf{python main.py -f./pickle/MDP_EASY -o ./pickle/results_EASY -n 10}
 
 ## KLB-TS:
-sampling.py: contains functions to compute the optimal sample allocation and the terms ```math (T_i)_{1 \leq i \leq 4} ``` used in the stopping rule. We implemented the D-tracking (similar guarantees to C-tracking but much easier to implement :p, see http://proceedings.mlr.press/v49/garivier16a.pdf ) 
+sampling.py: contains functions to compute the optimal sample allocation and the terms ```math $(T_i)_{1 \leq i \leq 4}$ ``` used in the stopping rule. We implemented the D-tracking (similar guarantees to C-tracking but much easier to implement :p, see http://proceedings.mlr.press/v49/garivier16a.pdf ) 
 stopping.py: checks if the stopping condition is verified
 environment.py: contains functions to generate random MDPs, construct initial estimate of the MDP, sample from the MDP and update MDP estimate after collecting observations.  
 
