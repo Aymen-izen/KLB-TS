@@ -3,7 +3,7 @@
 
 ## Reproducing experiments:
 - The pickle folder contains .pkl files of the two MDPs used in the paper experiments. 
-- It also contains the .pkl file of classical example RIVERSWIM (see https://ieeexplore.ieee.org/document/1374179). Note however that RIVERSWIM has a constant <img src="https://latex.codecogs.com/png.latex?\dpi{100}%20U(\phi)%20\sim%207%20\times%2010^8"/>, so it might take some considerable run time.
+- It also contains the .pkl file of classical example RIVERSWIM (see https://ieeexplore.ieee.org/document/1374179). Note however that RIVERSWIM has a constant <img src="https://latex.codecogs.com/png.latex?\dpi{100}%20U(\phi)%20\sim%207%20\times%2010^7"/>, so it might take some considerable run time.
 - The notebook Experiments.ipynb shows how to generate random MDPs of a given size and how to run KLB-TS or BESPOKE on them and plot figures.
 
 ## main.py:
