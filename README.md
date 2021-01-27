@@ -1,4 +1,4 @@
-# Implementation of KLB-TS algorithm (see https://arxiv.org/abs/2009.13405)
+# Implementation of KLB-TS:
 
 
 ## Reproducing experiments:
@@ -16,7 +16,7 @@ Example:  **python main.py -f ./pickle/MDP_EASY -o ./pickle/results_EASY -n 10**
 
 
 ## KLB-TS:
-- sampling.py: contains functions to compute the optimal sample allocation and the terms <img src="https://latex.codecogs.com/png.latex?\dpi{100}\(T_i)_{1%20\leq%20i%20\leq%204}"/> used in the stopping rule. We implemented the D-tracking (similar guarantees to C-tracking but much easier to implement :p, see http://proceedings.mlr.press/v49/garivier16a.pdf ) 
+- sampling.py: contains functions to compute the optimal sample allocation and the terms <img src="https://latex.codecogs.com/png.latex?\dpi{100}\(T_i)_{1%20\leq%20i%20\leq%204}"/> used in the stopping rule. We implemented the D-tracking (similar guarantees to C-tracking but much straightforward to implement, see http://proceedings.mlr.press/v49/garivier16a.pdf ) 
 - stopping.py: checks if the stopping condition is verified
 - environment.py: contains functions to generate random MDPs, construct initial estimate of the MDP, sample from the MDP and update MDP estimate after collecting observations.  
 
